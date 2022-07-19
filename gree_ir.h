@@ -58,7 +58,8 @@ public:
     climateModes.insert(CLIMATE_MODE_HEAT);
     climateModes.insert(CLIMATE_MODE_DRY);
     climateModes.insert(CLIMATE_MODE_FAN_ONLY);
-
+    climateModes.insert(CLIMATE_MODE_AUTO);
+    
     traits.set_supported_modes(climateModes);
 
 
@@ -110,6 +111,9 @@ public:
         break;
       case CLIMATE_MODE_OFF:
         ac.off();
+        break;
+      case CLIMATE_MODE_AUTO:
+        ac.setMode(kGreeAuto);
         break;
 
       }
